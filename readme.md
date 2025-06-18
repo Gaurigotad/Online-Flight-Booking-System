@@ -63,7 +63,7 @@ A complete web-based flight booking platform developed using **PHP**, **MySQL**,
 
 📧 Contact
 Have any suggestions or want to contribute?
-📬 Reach out via Gaurigotad
+📬 Reach out via [Gaurigotad](https://github.com/Gaurigotad)
 
 ## **Default Admin Access**
 **username: admin**
