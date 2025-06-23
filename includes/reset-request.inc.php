@@ -7,7 +7,9 @@ if(isset($_POST['reset-req-submit'])) {
     require '../helpers/init_conn_db.php';   
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
-    $url = 'http://localhost/ofbms/create-new-pwd.php?selector=' . $selector . '&validator=' . bin2hex($token);
+    
+    // Url specified below will only run on localhost
+    $url = 'http://localhost/QuickFlights/create-new-pwd.php?selector=' . $selector . '&validator=' . bin2hex($token);
     $expires = date('U')+1800;
     $user_email = $_POST['user_email'];
     if(!filter_var($user_email,FILTER_VALIDATE_EMAIL)) {
@@ -49,10 +51,10 @@ if(isset($_POST['reset-req-submit'])) {
         $mail->SMTPSecure = "tls";
         $mail->Port       = 587;
         $mail->Host       = "smtp.gmail.com";
-        $mail->Username   = "engineeringratnagiri@gmail.com";
-        $mail->Password   = "hven fshe yilc tqgz";
+        $mail->Username   = "your_username";
+        $mail->Password   = "your_password";
         $mail->IsHTML(true);
-        $mail->SetFrom('engineeringratnagiri@gmail.com');
+        $mail->SetFrom('test@gmail.com');
         $mail->AddAddress($user_email);    
         $mail->Subject = "Reset password request for site_name";
         $content = "
